@@ -1,15 +1,17 @@
-import { Item, ItemType } from "./item";
+import { TodoList } from "./todoList";
 
-export function Todo({ itemList }: { itemList: ItemType[] }) {
+export function Todo() {
     return (
-        <ul className="flex flex-col gap-1">
-            {itemList.map((item, index) => (
-                <Item
-                    key={index + item.name}
-                    checked={item.checked}
-                    name={item.name}
-                ></Item>
-            ))}
-        </ul>
+        <div className="flex flex-col max-h-230 h-[80vh] max-w-150  w-[70vw] bg-neutral-900 border border-neutral-400 text-white rounded-4xl p-7">
+            <h1 className="text-3xl font-bold pb-5">Tarefas A Fazer</h1>
+            <TodoList
+                itemList={[
+                    { checked: true, name: "Primeira Tarefa" },
+                    { checked: false, name: "Segunda Tarefa" },
+                    { checked: false, name: "Terceira Tarefa" },
+                    { checked: false, name: "Quarta Tarefa" },
+                ]}
+            ></TodoList>
+        </div>
     );
 }

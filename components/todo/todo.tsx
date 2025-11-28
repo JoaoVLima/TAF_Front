@@ -7,14 +7,7 @@ export function Todo() {
                       bg-neutral-900 border border-neutral-400 rounded-4xl p-7"
         >
             <h1 className="text-3xl font-bold pb-5">Tarefas A Fazer</h1>
-            <TodoList
-                itemList={[
-                    { checked: true, name: "Primeira Tarefa" },
-                    { checked: false, name: "Segunda Tarefa" },
-                    { checked: false, name: "Terceira Tarefa" },
-                    { checked: false, name: "Quarta Tarefa" },
-                ]}
-            ></TodoList>
+            <TodoList></TodoList>
         </div>
     );
 }

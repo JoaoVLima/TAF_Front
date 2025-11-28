@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, KeyboardEvent } from "react";
 import { Item, ItemType } from "./item";
 
-export function TodoList({ itemList }: { itemList: ItemType[] }) {
+export function TodoList({ itemList = [] }: { itemList?: ItemType[] }) {
     const [items, setItems] = useState<ItemType[]>(itemList);
     const [input, setInput] = useState("");
 

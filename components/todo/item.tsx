@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 
 export type ItemType = {
     checked: boolean;
@@ -8,20 +8,18 @@ export type ItemType = {
 };
 
 export function Item({ checked, name }: ItemType) {
-    const [Checked, setChecked] = useState(checked);
+    const [checkbox, setCheckbox] = useState(checked);
 
-    const handleChange = (event: {
-        target: { checked: boolean | ((prevState: boolean) => boolean) };
-    }) => {
-        setChecked(event.target.checked);
+    const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+        setCheckbox(event.target.checked);
     };
 
     return (
         <li>
             <input
                 type="checkbox"
-                checked={Checked}
-                onChange={handleChange}
+                checked={checkbox}
+                onChange={handleChangeCheckbox}
                 className="mr-2"
             ></input>
             {name}

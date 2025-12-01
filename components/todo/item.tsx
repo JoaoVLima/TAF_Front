@@ -4,10 +4,10 @@ import { useState, ChangeEvent } from "react";
 
 export type ItemType = {
     checked: boolean;
-    name: string;
+    text: string;
 };
 
-export function Item({ checked, name }: ItemType) {
+export function Item({ checked, text }: ItemType) {
     const [checkbox, setCheckbox] = useState(checked);
 
     const handleChangeCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,7 @@ export function Item({ checked, name }: ItemType) {
                 onChange={handleChangeCheckbox}
                 className="mr-2"
             ></input>
-            {name}
+            {text}
         </li>
     );
 }

@@ -14,7 +14,7 @@ export function TodoList({ itemList = [] }: { itemList?: ItemType[] }) {
     const addItem = (item: string) => {
         item = item.trim();
         if (!item) return;
-        setItems((prevItems) => [...prevItems, { checked: false, name: item }]);
+        setItems((prevItems) => [...prevItems, { checked: false, text: item }]);
     };
 
     const handleKeyDownInput = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -28,9 +28,9 @@ export function TodoList({ itemList = [] }: { itemList?: ItemType[] }) {
         <ul className="flex flex-col gap-1">
             {items.map((item, index) => (
                 <Item
-                    key={index + item.name}
+                    key={index + item.text}
                     checked={item.checked}
-                    name={item.name}
+                    text={item.text}
                 />
             ))}
 
